@@ -1,0 +1,131 @@
+/* Inkafarma - estilos propios sobre Bootstrap 5.3.8 (verde, amarillo y arena) */
+:root {
+    --verde: #0aa24b;
+    --verde-osc: #065f31;
+    --verde-profundo: #04391d;
+    --amarillo: #ffe600;
+    --arena: #f5ebdd;
+    --arena-osc: #e8d5b5;
+    --texto: #2f2a24;
+}
+body {
+    background: #eef3f0;                          /* Fondo liso (sin imagen) */
+    min-height: 100vh;
+    color: var(--texto);
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+html { scroll-behavior: smooth; }
+
+/* ---------- Barra lateral (izquierda) ---------- */
+.barra-lateral {
+    background: linear-gradient(180deg, var(--verde-profundo), var(--verde-osc));
+    color: #ffffff;
+    padding-bottom: 1rem;
+}
+@media (min-width: 992px) {
+    .barra-lateral { width: 270px; flex-shrink: 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+}
+.marca-lateral { padding: 1.1rem 1.2rem; }
+.logo-circulo {
+    width: 48px; height: 48px; border-radius: 50%;
+    border: 2px solid #ffffff; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+.marca-nombre { display: block; color: var(--amarillo); font-weight: 800; font-size: 1.3rem; line-height: 1.1; }
+.marca-sede { color: rgba(255, 255, 255, 0.75); font-size: 0.75rem; }
+.titulo-menu {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.55); padding: 0 1.2rem; margin: 1.2rem 0 0.4rem;
+}
+.enlace-menu {
+    display: flex; align-items: center; gap: 0.7rem;
+    padding: 0.6rem 1.2rem; color: rgba(255, 255, 255, 0.9);
+    text-decoration: none; border-left: 4px solid transparent; font-weight: 500;
+}
+.enlace-menu:hover { background: rgba(255, 255, 255, 0.12); color: #ffffff; }
+.enlace-menu.activo { background: rgba(255, 255, 255, 0.18); border-left-color: var(--amarillo); color: #ffffff; font-weight: 600; }
+.enlace-menu .icono { width: 1.5rem; text-align: center; }
+.usuario-lateral { margin: 1.2rem 1rem 0; padding: 0.9rem; background: rgba(255, 255, 255, 0.12); border-radius: 12px; }
+
+/* ---------- Barra superior ---------- */
+.contenido { min-width: 0; }
+.barra-superior {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255, 255, 255, 0.93); backdrop-filter: blur(6px);
+    border-bottom: 1px solid #dfe6ea; padding: 0.8rem 1.5rem;
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+}
+.barra-superior h5 { margin: 0; font-weight: 700; color: var(--verde-osc); }
+.chip-usuario { background: var(--arena); border: 1px solid var(--arena-osc); border-radius: 30px; padding: 4px 14px 4px 4px; font-size: 0.9rem; }
+.chip-usuario .mini-avatar {
+    display: inline-flex; width: 28px; height: 28px; border-radius: 50%;
+    background: var(--verde); color: #ffffff; font-weight: 700; font-size: 0.8rem;
+    align-items: center; justify-content: center; margin-right: 6px;
+}
+.contenedor-pagina { padding: 1.5rem; }
+
+/* ---------- Paneles y títulos ---------- */
+.panel {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 16px;
+    border-top: 5px solid var(--verde);
+    padding: 26px;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.12);
+}
+.panel[id] { scroll-margin-top: 80px; }
+.titulo-seccion { font-weight: 700; border-left: 6px solid var(--amarillo); padding-left: 12px; margin-bottom: 4px; }
+.subtitulo-seccion { color: #7a6a55; margin-bottom: 20px; padding-left: 18px; }
+
+/* ---------- Banner del catálogo ---------- */
+.hero {
+    background: linear-gradient(120deg, var(--verde-osc), var(--verde));
+    color: #ffffff; border-radius: 16px; padding: 26px;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.18);
+}
+.hero h1 { font-weight: 800; font-size: 1.9rem; }
+.hero .dato { background: rgba(255, 255, 255, 0.16); border-radius: 12px; padding: 10px 14px; text-align: center; }
+.hero .dato strong { display: block; font-size: 1.6rem; }
+
+/* ---------- Personal ---------- */
+.tarjeta-persona { border: 1px solid var(--arena-osc); border-radius: 14px; transition: transform 0.2s, box-shadow 0.2s; }
+.tarjeta-persona:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14); }
+.foto-persona { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center top; display: block; background: #ffffff; }
+.foto-ficha {
+    width: 100%; max-width: 320px; aspect-ratio: 1 / 1; object-fit: cover; object-position: center top;
+    border-radius: 16px; border: 4px solid var(--arena); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.insignia-cargo { background: var(--arena); color: var(--texto); border: 1px solid var(--arena-osc); font-weight: 600; white-space: normal; text-align: left; }
+
+/* ---------- Medicamentos ---------- */
+.tarjeta-med { border: 1px solid var(--arena-osc); border-radius: 14px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+.tarjeta-med:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14); }
+.caja-producto {
+    width: 100%; aspect-ratio: 1 / 1; background: #ffffff; border-bottom: 1px solid var(--arena-osc);
+    display: flex; align-items: center; justify-content: center;
+}
+.caja-producto img { width: 100%; height: 100%; object-fit: contain; }
+.precio { color: var(--verde-osc); font-size: 1.35rem; font-weight: 700; }
+
+/* ---------- Panel de administración ---------- */
+.tarjeta-resumen {
+    background: #ffffff; border: 1px solid var(--arena-osc); border-left: 6px solid var(--verde);
+    border-radius: 12px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+.encabezado-arena th { background: var(--verde-osc) !important; color: #ffffff !important; }
+.miniatura { width: 50px; height: 50px; object-fit: cover; border-radius: 8px; border: 1px solid var(--arena-osc); }
+.sin-foto {
+    width: 50px; height: 50px; border-radius: 8px; background: var(--arena);
+    border: 1px dashed #c9a877; font-size: 10px;
+    display: inline-flex; align-items: center; justify-content: center;
+}
+
+/* ---------- Botones y pie de página ---------- */
+.btn-verde { background: var(--verde); color: #ffffff; border: 0; font-weight: 600; }
+.btn-verde:hover { background: var(--verde-osc); color: #ffffff; }
+.pie-pagina { background: var(--verde-osc); color: #ffffff; text-align: center; padding: 16px 12px; margin-top: 10px; font-size: 0.85rem; }
+
+/* ---------- Inicio de sesión ---------- */
+.fondo-login {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px;
+    background: linear-gradient(135deg, var(--verde-profundo), var(--verde-osc));
+}
+.logo-login { width: 96px; height: 96px; border-radius: 50%; border: 4px solid #ffffff; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); }
